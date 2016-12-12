@@ -1,0 +1,32 @@
+BEGIN;
+
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS beers;
+
+
+CREATE TABLE users(
+  id SERIAL PRIMARY KEY,
+  session_id VARCHAR,
+  name VARCHAR NOT NULL,
+  email VARCHAR NOT NULL,
+  profile_img VARCHAR
+);
+
+CREATE TABLE beers(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR NOT NULL,
+  description VARCHAR NOT NULL,
+  abv DECIMAL NOT NULL,
+  style INT NOT NULL,
+  organic VARCHAR NOT NULL,
+  pic VARCHAR NOT NULL,
+  web_id VARCHAR NOT NULL,
+  users_id INT NOT NULL
+);
+
+ALTER TABLE ONLY beers
+  ADD CONSTRAINT users_id_fkey
+  FOREIGN KEY (users_id)
+  REFERENCES users(id);
+
+COMMIT;
