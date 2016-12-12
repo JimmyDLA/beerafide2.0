@@ -8,7 +8,7 @@ const path = require('path');
 require('dotenv').config()
 
 // Declaring the routes to use them later
-const homeRoute   = require("./routes/homeRoute");
+const apiRoute   = require("./routes/apiRoute");
 
 // Google Auth
 const session = require('express-session');
@@ -38,4 +38,4 @@ app.use('/', express.static(path.join(__dirname, 'views/')));
 app.listen(PORT, () => console.log('server is running @', PORT));
 
 // Routes to direct the path of the browsers
-app.use("/json", homeRoute);
+app.use('/api', apiRoute)
