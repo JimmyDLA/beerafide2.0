@@ -1,6 +1,6 @@
 export default class AjaxAdapter {
 
-  static googleSearch(searchTerms) {
+  static beerSearch(searchTerms) {
     const payload = { searchTerms }
     return fetch('/api/beerSearch', {
       headers: {
@@ -9,6 +9,6 @@ export default class AjaxAdapter {
       method: 'POST',
       body: JSON.stringify(payload)
     })
-    .then((r) => r.json())
+    .then((results) => results.json())
   }
 }

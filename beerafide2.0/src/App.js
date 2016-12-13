@@ -16,8 +16,9 @@ class App extends Component {
   searchBeers() {
     AjaxAdapter.beerSearch(this.state.searchTerms)
     .then((data) => {
+      console.log(data)
       this.setState({
-        beerSearch: data.results
+        beerSearch: data
       })
     })
   }

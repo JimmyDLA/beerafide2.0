@@ -7,7 +7,7 @@ const Search = props => (
   <div id='form-container'>
     <input id="searchForm"
       type="text"
-      placeholder="Search Your Bucket List Item"
+      placeholder="Search Beers"
       onChange={props.handleSearchInput}
     />
     <button
