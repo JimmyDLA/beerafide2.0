@@ -7,6 +7,11 @@ const bodyParser = require('body-parser');
 const path = require('path');
 require('dotenv').config()
 
+// ??? whats this for ???
+const app = express();
+app.use(logger('dev'));
+app.use(bodyParser.json());
+
 // Declaring the routes to use them later
 const apiRoute   = require("./routes/apiRoute");
 
@@ -22,10 +27,6 @@ app.use(session({
     secure: false
 }));
 
-// ??? whats this for ???
-const app = express();
-app.use(logger('dev'));
-app.use(bodyParser.json());
 
 // To Know in what PORT the server is on
 const PORT = process.env.PORT || 3001;
@@ -38,4 +39,4 @@ app.use('/', express.static(path.join(__dirname, 'views/')));
 app.listen(PORT, () => console.log('server is running @', PORT));
 
 // Routes to direct the path of the browsers
-app.use('/api', apiRoute)
+app.use('/api', apiRoute);
