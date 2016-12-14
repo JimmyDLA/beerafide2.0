@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Search from './components/Search/Search'
 import AjaxAdapter from './AjaxHelper/AjaxAdapter';
+import Items from './components/Items/Items';
 import logo from './logo.svg';
 import './App.css';
 
@@ -9,7 +10,11 @@ class App extends Component {
     super()
     this.state = {
       searchTerms: "",
-      beerSearch: []
+      beerSearch: [],
+      oneBeer: [],
+      webID:""
+
+
     }
   }
 
@@ -18,7 +23,7 @@ class App extends Component {
     .then((data) => {
       console.log(data)
       this.setState({
-        beerSearch: data
+        beerSearch: data.data
       })
     })
   }
@@ -31,6 +36,12 @@ class App extends Component {
     })
     console.log(this.state.searchTerms);
   }
+  handleClickBeer(id) {
+    // this.setState({
+      // webID: id
+    // })
+    console.log("this is the id ===>", id);
+  }
 
   render() {
     return (
@@ -42,6 +53,10 @@ class App extends Component {
         <Search
           handleSearchSubmit={() => this.handleSearchSubmit()}
           handleSearchInput={(event) => this.handleSearchInput(event)}
+        />
+        <Items
+          beerSearch={this.state.beerSearch}
+          handleClickBeer={this.handleClickBeer.bind(this)}
         />
 
       </div>

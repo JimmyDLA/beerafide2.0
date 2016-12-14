@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { textSearch } = require('./../services/beerSearch');
+const { textSearch , webIdSearch } = require('./../services/beerSearch');
 const { getUserProfile, getAllUsers } = require('./../models/userData');
 
 const sendResponse = (req, res) => res.json(res.data);
@@ -7,5 +7,7 @@ const sendResponse = (req, res) => res.json(res.data);
 router.route('/beerSearch')
   .post(textSearch, sendResponse);
 
+router.route('/oneBeerSearch')
+  .post(webIdSearch, sendResponse);
 
   module.exports = router;
