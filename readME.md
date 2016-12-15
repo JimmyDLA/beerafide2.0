@@ -11,7 +11,7 @@ People often forget that theres TONS of beers in the world and we dont try to ex
 
 
 ### Wireframes
-![Page1](/views/images/pic0.jpg)
+![Page1](/views/images/pic0.JPG)
 ![Page2](/views/images/pic1.png)
 ![Page3](/views/images/pic2.png)
 ![Page4](/views/images/pic3.png)
