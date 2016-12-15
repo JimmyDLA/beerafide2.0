@@ -1,10 +1,3 @@
-.rating {
-font-size: 20px;
-font-weight: bold;
-color: tomato;
-line-height: 5px;
-margin-top:25px;
-}
 
 img{
 .border-style: solid;
@@ -24,15 +17,9 @@ width: 255px;
   padding-top: 20px;
   margin-left: 35px;
   margin-bottom: 20px;
-  width: 480px;
-  background-color: #fafafa;
+  width: 300px;
+  background-color: rgb(235, 230, 240);
 -webkit-box-shadow: 6px 7px 9px -6px rgba(210,212,211,1);
 -moz-box-shadow: 6px 7px 9px -6px rgba(210,212,211,1);
 box-shadow: 6px 7px 9px -6px rgba(210,212,211,1);
-}
-
-.address{
-  font-size: 19px;
-  line-height: 20px;
-  color: gray;
 }

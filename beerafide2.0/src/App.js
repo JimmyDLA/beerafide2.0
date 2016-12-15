@@ -3,7 +3,6 @@ import Search from './components/Search/Search'
 import AjaxAdapter from './AjaxHelper/AjaxAdapter';
 import Items from './components/Items/Items';
 import OneBeer from './components/OneBeer/OneBeer';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -92,8 +91,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h2 id="title">BEERAFIDE</h2>
         </div>
         <Search
           handleSearchSubmit={() => this.handleSearchSubmit()}
