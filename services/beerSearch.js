@@ -17,9 +17,10 @@ function textSearch(req, res, next) {
   })
 }
 
-function webIdSearch(req, res, next) {
-  oneBeer = req.body.oneBeer;
-  const API_ENDPOINT = `https://api.brewerydb.com/v2/beer?ids=${oneBeer}&key=${process.env.BREWERY_DB_KEY}&format=json`;
+function webIDSearch(req, res, next) {
+  webID = req.body.webID;
+  const API_ENDPOINT = `https://api.brewerydb.com/v2/beer/${webID}?&key=${process.env.BREWERY_DB_KEY}&format=json`;
+  console.log("@ services webID = ",webID);
   console.log(API_ENDPOINT);
   fetch(API_ENDPOINT)
   .then((r) => r.json())
@@ -34,4 +35,4 @@ function webIdSearch(req, res, next) {
   })
 }
 
-module.exports = { textSearch, webIdSearch }
+module.exports = { textSearch, webIDSearch }

@@ -1,20 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './ListItem.css';
 
-class ListItem extends Component {
-  render() {
-    return (
-
-
-
-<div className="list-item" id={this.props.webID} onClick={() => this.props.handleClickBeer(this.props.webID)} }>
-    <p>{this.props.webID}</p>
-    <h2 className="name">{this.props.name}</h2>
-    <img src={this.props.pic} alt={this.props.name} />
-
-</div>
-    );
-  }
-}
+const ListItem = (props) => (
+  <div className="list-item" onClick={() => props.handleClickBeer(props.webID)}>
+    <h2 className="name">{props.name}</h2>
+    <img src={props.pic} alt={props.name} />
+  </div>
+)
 
 export default ListItem;

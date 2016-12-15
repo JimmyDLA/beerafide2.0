@@ -12,8 +12,8 @@ export default class AjaxAdapter {
     .then((results) => results.json())
   }
 
-  static oneBeerSearch(oneBeer) {
-    const payload = { oneBeer }
+  static oneBeerSearch(webID) {
+    const payload = { webID }
     return fetch('/api/oneBeerSearch', {
       headers: {
         'Content-Type': 'application/json'

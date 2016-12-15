@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Search from './components/Search/Search'
 import AjaxAdapter from './AjaxHelper/AjaxAdapter';
 import Items from './components/Items/Items';
+import OneBeer from './components/OneBeer/OneBeer';
+import OneBeerItem from './components/OneBeerItem/OneBeerItem'
 import logo from './logo.svg';
 import './App.css';
 
@@ -12,9 +14,29 @@ class App extends Component {
       searchTerms: "",
       beerSearch: [],
       oneBeer: [],
-      webID:""
+      webID:"",
+      showBeers: true,
+      showOne: false
+    }
+  }
+  showOne(showOne){
+    if(this.state.showOne === true){
+      return(
+        <OneBeerItem
+          OneBeerItem={this.state.oneBeer}
+        />
+      )
+    }
+  }
 
-
+  showBeers(showBeers) {
+    if (this.state.showBeers === true) {
+      return (
+        <Items
+          beerSearch={this.state.beerSearch}
+          handleClickBeer={(event) => this.handleClickBeer(event)}
+        />
+      )
     }
   }
 
@@ -27,20 +49,39 @@ class App extends Component {
       })
     })
   }
+
   handleSearchSubmit() {
     this.searchBeers()
+    this.setState({
+      showBeers: true,
+      showOne: false
+    })
+
   }
+
   handleSearchInput(e) {
     this.setState({
-      searchTerms: e.target.value
+      searchTerms: e.target.value,
     })
     console.log(this.state.searchTerms);
   }
+  searchOneBeer() {
+    AjaxAdapter.oneBeerSearch(this.state.webID)
+    .then((data) => {
+      console.log(data)
+      this.setState({
+        oneBeer: data.data,
+        showBeers: false,
+      })
+    })
+  }
+
+
   handleClickBeer(id) {
-    // this.setState({
-      // webID: id
-    // })
-    console.log("this is the id ===>", id);
+    this.setState({
+      webID: id,
+      showOne: true
+    }, this.searchOneBeer)
   }
 
   render() {
@@ -54,10 +95,9 @@ class App extends Component {
           handleSearchSubmit={() => this.handleSearchSubmit()}
           handleSearchInput={(event) => this.handleSearchInput(event)}
         />
-        <Items
-          beerSearch={this.state.beerSearch}
-          handleClickBeer={this.handleClickBeer.bind(this)}
-        />
+        {this.showBeers(this.state.showBeers)}
+        {this.showOne(this.state.showOne)}
+
 
       </div>
     );
