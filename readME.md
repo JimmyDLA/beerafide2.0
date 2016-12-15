@@ -11,11 +11,11 @@ People often forget that theres TONS of beers in the world and we dont try to ex
 
 
 ### Wireframes
-![Page1](/views/images/pic0.png)
+![Page1](/views/images/pic0.jpg)
 ![Page2](/views/images/pic1.png)
-![Page3](/views/images/pic2.jpg)
-![Page4](/views/images/pic3.jpg)
-![Page5](/views/images/pic4.jpg)
+![Page3](/views/images/pic2.png)
+![Page4](/views/images/pic3.png)
+![Page5](/views/images/pic4.png)
 
 ## Technologies used:
 - [x] HTML
