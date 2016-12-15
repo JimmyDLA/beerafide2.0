@@ -1,25 +1,19 @@
-// import React from 'react';
-// import OneBeerItem from './../OneBeerItem/OneBeerItem'
-// import './OneBeer.css';
-//
-// const Beer = props =>
-//   <div id="container">
-//     <OneBeerItem
-//       {props.oneBeer.name}
-//       // pic={props.oneBeer.labels}
-//       {props.oneBeer.style.name}
-//       {props.oneBeer.description}
-//       {props.oneBeer.abv}
-//       {props.oneBeer.isOrganic}
-//     />
-//   </div>
-//
-// const OneBeer = props =>(
-//   <div>
-//     {Beer(props)}
-//   </div>
-//
-//
-// );
-//
-// export default OneBeer;
+import React,{Component} from 'react';
+import './OneBeer.css';
+
+class OneBeer extends Component{
+  render() {
+    return (
+      <div className="OneBeerContainer">
+        <h1>Name:</h1><p> {this.props.OneBeer.name}</p>
+        <img src={this.props.OneBeer.labels.medium} />
+        <h2>Type: </h2> <p>{this.props.OneBeer.style.shortName}</p>
+        <h2>ABV:</h2><p> {this.props.OneBeer.abv}</p>
+        <h2>Organic: </h2><p>{this.props.OneBeer.isOrganic}</p>
+        <h2>Desc.: </h2><p>{this.props.OneBeer.description}</p>
+      </div>
+    )
+  }
+}
+
+export default OneBeer;

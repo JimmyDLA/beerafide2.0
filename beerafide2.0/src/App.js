@@ -3,7 +3,6 @@ import Search from './components/Search/Search'
 import AjaxAdapter from './AjaxHelper/AjaxAdapter';
 import Items from './components/Items/Items';
 import OneBeer from './components/OneBeer/OneBeer';
-import OneBeerItem from './components/OneBeerItem/OneBeerItem'
 import logo from './logo.svg';
 import './App.css';
 
@@ -22,8 +21,8 @@ class App extends Component {
   showOne(showOne){
     if(this.state.showOne === true){
       return(
-        <OneBeerItem
-          OneBeerItem={this.state.oneBeer}
+        <OneBeer
+          OneBeer={this.state.oneBeer}
         />
       )
     }
@@ -65,6 +64,11 @@ class App extends Component {
     })
     console.log(this.state.searchTerms);
   }
+  makeItTrue(){
+    this.setState({
+      showOne: true
+    })
+  }
   searchOneBeer() {
     AjaxAdapter.oneBeerSearch(this.state.webID)
     .then((data) => {
@@ -72,15 +76,15 @@ class App extends Component {
       this.setState({
         oneBeer: data.data,
         showBeers: false,
-      })
+        // showOne:true
+      },this.makeItTrue)
     })
   }
 
 
   handleClickBeer(id) {
     this.setState({
-      webID: id,
-      showOne: true
+      webID: id
     }, this.searchOneBeer)
   }
 
