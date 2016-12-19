@@ -14,6 +14,8 @@ const path = require('path');
 const app = express();
 app.use(logger('dev'));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 
 // Declaring the routes to use them later
 const apiRoute   = require("./routes/apiRoute");
