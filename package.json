@@ -3,18 +3,27 @@
   "version": "1.0.0",
   "description": "the world of beers",
   "main": "server.js",
+  "engines": {
+    "node": "6.6.0",
+    "npm": "3.10.7"
+  },
+  "private": true,
   "scripts": {
     "start": "node server.js",
     "rebuild": "webpack -d --progress --colors",
     "watch": "webpack -d --progress --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines": {
-    "node": "6.6.0",
-    "npm": "3.10.7"
+  "repository": {
+   "type": "",
+   "url": ""
   },
   "author": "JimmyDLA",
-  "license": "ISC",
+  "license": "",
+  "bugs": {
+   "url": "https://github.com/JimmyDLA/beerafide2.0/issues"
+ },
+ "homepage": "https://github.com/JimmyDLA/beerafide2.0#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "dotenv": "^2.0.0",
