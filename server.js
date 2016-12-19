@@ -25,7 +25,7 @@ const apiRoute   = require("./routes/apiRoute");
 const PORT = process.env.PORT || 3001;
 
 // serve landing page
-// app.use('/', express.static(path.join(__dirname, 'views')));
+app.use('/', express.static(path.join(__dirname, 'views')));
 
 
 
