@@ -18,18 +18,6 @@ app.use(bodyParser.json());
 // Declaring the routes to use them later
 const apiRoute   = require("./routes/apiRoute");
 
-// Google Auth
-// const session = require('express-session');
-// const google = require('googleapis');
-// const gmail = google.plus('v1');
-// //configure session cookie
-// app.use(session({
-//   secret: 'secret_eorivj340g45j9g4509j9wcr',
-//     resave: true,
-//     saveUninitialized: false,
-//     secure: false
-// }));
-
 
 // To Know in what PORT the server is on
 const PORT = process.env.PORT || 3001;
