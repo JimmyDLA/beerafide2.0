@@ -15,8 +15,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-   "type": "",
-   "url": ""
+   "type": "git",
+   "url": "git+github.com:JimmyDLA/beerafide2.0.git"
   },
   "author": "JimmyDLA",
   "license": "",
