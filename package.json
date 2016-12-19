@@ -4,14 +4,10 @@
   "description": "the world of beers",
   "main": "server.js",
   "scripts": {
-   "clean": "rm -rf dist && rm -rf node_modules",
-   "heroku-prebuild": "bash ./scripts/deployment_react.sh",
-   "heroku-postbuild": "bash ./scripts/deployment_cleanup.sh",
-   "rebuild": "webpack -d --progress --colors",
-   "watch": "webpack -d --progress --watch"
-   },
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "engines": {
-    "node": "4.1.1",
+    "node": "6.6.0",
     "npm": "3.10.7"
   },
   "author": "JimmyDLA",
@@ -21,6 +17,7 @@
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
     "express-session": "^1.14.2",
+    "googleapis": "^14.2.0",
     "morgan": "^1.7.0",
     "node-fetch": "^1.6.3",
     "pg-promise": "^5.4.3"
