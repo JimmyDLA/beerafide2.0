@@ -1,5 +1,5 @@
 "use strict";
-if (process.env.NODE_ENV == 'development') require('dotenv').config({ silent: true });
+// if (process.env.NODE_ENV == 'development') require('dotenv').config({ silent: true });
 
 
 
@@ -34,4 +34,4 @@ app.listen(PORT, () => console.log('server is running @', PORT));
 
 // Routes to direct the path of the browsers
 app.use('/api', apiRoute);
-app.use('/', apiRoute);
+// app.use('/', apiRoute);
